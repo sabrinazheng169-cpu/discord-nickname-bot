@@ -12,7 +12,7 @@ const client = new Client({
   ],
 });
 
-const REMINDER_DELAY = 60 * 60 * 1000; // 1 hour
+const REMINDER_DELAY = 60 * 1000; // 1 minute for testing
 
 client.on("guildMemberAdd", (member) => {
   console.log(`New member joined: ${member.user.tag}`);
@@ -47,7 +47,7 @@ client.on("guildMemberAdd", (member) => {
       }
 
       await channel.send(
-        `${currentMember} Please update your server nickname to exactly two words: your first and last name, each at least 2 characters long.`
+        `${currentMember} Please change your username to your first and last name ASAP to remain in the server.\n\nTo do so, do the following:\n\nClick "Higgsfield x GOOD Marketing" in the top left\nClick "Edit Per-server Profile"\nChange your name to your First & Last name`
       );
 
       console.log(`Reminder sent to ${currentMember.user.tag}`);
