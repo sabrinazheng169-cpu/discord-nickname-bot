@@ -12,7 +12,7 @@ const client = new Client({
   ],
 });
 
-const REMINDER_DELAY = 60 * 1000; // 1 minute for testing
+const REMINDER_DELAY = 60 * 60 * 1000; // 1 hour
 
 client.on("guildMemberAdd", (member) => {
   console.log(`New member joined: ${member.user.tag}`);
