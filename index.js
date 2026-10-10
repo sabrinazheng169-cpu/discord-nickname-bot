@@ -14,25 +14,8 @@ const client = new Client({
 
 const REMINDER_DELAY = 60 * 60 * 1000; // 1 hour
 
-client.once("ready", async () => {
+client.once("ready", () => {
   console.log(`Bot online as ${client.user.tag}`);
-
-  // TEMPORARY permission test
-  try {
-    const channel = await client.channels.fetch(
-      process.env.REMINDER_CHANNEL_ID
-    );
-
-    if (!channel || !channel.isTextBased()) {
-      console.error("Reminder channel not found or isn't text-based.");
-      return;
-    }
-
-    await channel.send("Permissions are working.");
-    console.log("Test message sent successfully.");
-  } catch (error) {
-    console.error("Test message failed:", error);
-  }
 });
 
 client.on("guildMemberAdd", (member) => {
